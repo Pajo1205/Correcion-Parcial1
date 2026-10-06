@@ -1,0 +1,39 @@
+Clase pizza:
+- Antes guardaba un solo ingrediente; ahora guarda un arreglo Ingredientes[], para permitir pizzas con varios ingredientes.
+- Se modificaron los constructores, el getter y el setter para trabajar con ese arreglo.
+- El constructor principal recibe tamaño, tipo de masa e ingredientes, en ese orden.
+- El constructor vacío deja la masa como SIMPLE y crea un arreglo vacío de ingredientes.
+
+Clase orden:
+- Los atributos pasaron de public a private, para acceder a ellos mediante getters y setters.
+- Se conservaron la cantidad, el combo, el arreglo int[] orden y la pizza.
+- El constructor que recibe pizza y cantidad establece el combo en false e inicializa el arreglo vacío.
+- El arreglo int[] orden se conservó, pero todavía no se utiliza porque no definimos qué representan sus números.
+
+La primera clase cocina pasó a llamarse interfaz:
+- Se agregó la lógica para simular por consola la preparación y entrega de las pizzas.
+- hacerPizza muestra el tamaño, la masa, los ingredientes y el horneado.
+- prepararOrden prepara la cantidad solicitada, contempla el combo y llama a la entrega.
+- entregarOrden muestra que la orden fue entregada.
+- Se agregaron validaciones para rechazar órdenes o pizzas nulas, cantidades menores o iguales a cero y pizzas con datos incompletos.
+
+Se creó una nueva clase cocina para administrar las órdenes:
+- Guarda un arreglo con capacidad para 5 órdenes.
+- Usa un contador para saber cuántas se han registrado.
+- agregarOrden guarda una orden si hay espacio y devuelve true; si está llena o recibe una orden nula, devuelve false.
+- Se agregaron métodos para consultar la cantidad registrada y obtener una orden por su posición.
+- Se eliminó el atributo pizza de esta clase porque cada orden ya contiene su propia pizza.
+- Se corrigió ordenes[5] por new orden[5]: el primero accede a una posición; el segundo crea el arreglo.
+
+Se agregaron dos métodos a interfaz:
+- tomarOrden valida la orden, intenta registrarla en la cocina e informa si fue aceptada o rechazada.
+- prepararTodasLasOrdenes recorre las órdenes registradas y prepara cada una.
+
+Clase Main:
+- Se quitaron los imports incorrectos y los que no se utilizaban.
+- Se corrigió la creación de pizzas para coincidir con el nuevo constructor.
+- Se crearon los objetos cocina e interfaz.
+- Se agregó un ejemplo que intenta registrar seis órdenes: acepta cinco y rechaza la sexta.
+- Finalmente, se preparan las órdenes aceptadas.
+
+Los enums Ingredientes, tamano y TipoMasa no cambiaron.
