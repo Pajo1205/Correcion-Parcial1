@@ -16,7 +16,7 @@ public class pizza {
 
     public pizza() {
         this.tipoMasa = TipoMasa.SIMPLE;
-        this.ingredientes = new Ingredientes[0];
+        this.ingredientes = new Ingredientes[10];
     }
 
     public tamano getTamano() {
